@@ -3,6 +3,7 @@ package com.montaury.pokebagarre.metier;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.*;
 
 class PokemonTest {
     @Test
@@ -18,7 +19,7 @@ class PokemonTest {
         boolean premierVainqueur = premierPokemon.estVainqueurContre(secondPokemon);
 
         // THEN
-        assertEquals(true, premierVainqueur);
+        assertThat(premierVainqueur).isTrue();
     }
 
     @Test
