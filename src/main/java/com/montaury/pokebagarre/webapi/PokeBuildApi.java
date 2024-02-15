@@ -17,15 +17,12 @@ import java.util.concurrent.CompletableFuture;
 public class PokeBuildApi {
   private static final String URL_BASE_API_PRODUCTION = "https://pokebuildapi.fr/";
   private final String urlBaseApi;
-
   public PokeBuildApi() {
     this(URL_BASE_API_PRODUCTION);
   }
-
   public PokeBuildApi(String urlBaseApi) {
     this.urlBaseApi = urlBaseApi;
   }
-
   public CompletableFuture<Pokemon> recupererParNom(String nom) throws ErreurBagarre {
     return HttpClient.newHttpClient().sendAsync(HttpRequest.newBuilder()
         .uri(getWebApiUri(nom.trim()))

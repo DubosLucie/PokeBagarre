@@ -26,6 +26,8 @@ public class Pokemon {
   public boolean estVainqueurContre(Pokemon autrePokemon) {
     var statsPremier = getStats();
     var statsSecond = autrePokemon.getStats();
+
+
     return statsPremier.getAttaque() > statsSecond.getAttaque()
       || statsPremier.getAttaque() == statsSecond.getAttaque() && statsPremier.getDefense() >= statsSecond.getDefense();
   }
